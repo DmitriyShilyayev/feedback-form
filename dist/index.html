@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Форма обратной связи</title>
+    </head>
+    <body>
+        <div class="container">
+            <form action="#" method="POST" class="form" id="form" novalidate>
+                <div class="message-container"></div>
+                <h1 class="page-title">
+                    Feedback
+                    <button
+                        class="info-button modal-trigger"
+                        type="button"
+                        title="Details"
+                    >
+                        Details
+                    </button>
+                </h1>
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <h2>Leave us your feedback</h2>
+                        <button
+                            class="close-button modal-trigger"
+                            type="button"
+                            title="Close"
+                        >
+                            Close
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Leave your message. Our manager will definitely
+                            contact you in the near future.
+                        </p>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="fullname">Full name</label>
+                    <input
+                        type="text"
+                        name="fullname"
+                        id="fullname"
+                        placeholder="Your name"
+                        data-error-empty-message="Please enter a name"
+                        required
+                    />
+                    <div class="error-container"></div>
+                </div>
+                <div class="field" id="email-wrapper">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="example@gmail.com"
+                        data-error-empty-message="Please enter your email"
+                        data-error-type-message="Please enter a valid email"
+                        required
+                    />
+                    <div class="error-container"></div>
+                </div>
+                <div class="field" id="phone-wrapper">
+                    <label for="phone">Phone number</label>
+                    <input
+                        type="tel"
+                        name="phone"
+                        id="phone"
+                        placeholder="+375"
+                        data-error-empty-message="Please enter your phone number"
+                        data-error-type-message="Please enter the correct phone number"
+                        required
+                    />
+                    <div class="error-container"></div>
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea
+                        name="message"
+                        id="message"
+                        placeholder="Your message"
+                        data-error-empty-message="Please enter your message"
+                        required
+                    ></textarea>
+                    <div class="error-container"></div>
+                </div>
+                <div class="action-wrapper">
+                    <button type="submit" id="submit">Send message</button>
+                </div>
+            </form>
+        </div>
+        <script src="./main.js"></script>
+    </body>
+</html>

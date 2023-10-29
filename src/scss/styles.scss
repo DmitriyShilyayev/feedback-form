@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body.open-modal {
+    overflow: hidden;
+    height: 100vh;
+
+    .modal-container {
+        scale: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    .info-button::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #000000a8;
+    }
+}
+
+.modal-container {
+    position: fixed;
+    background: white;
+    border: 1px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -100%);
+    transition: 0.4s all;
+    width: 50vw;
+    height: 50vh;
+    scale: 0;
+
+    .modal-header,
+    .modal-body {
+        padding: 20px;
+    }
+
+    h2,
+    p {
+        margin: 0;
+    }
+
+    .close-button {
+        cursor: pointer;
+        font-size: 0;
+        background-color: transparent;
+        background-image: url('../media/icon-close.svg');
+        background-size: cover;
+        border: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.container {
+    background: #f1f1f1;
+    padding: 40px;
+    min-height: 100vh;
+
+    .form {
+        background: #fff;
+        border-radius: 10px;
+        padding: 30px 40px;
+
+        .message-container {
+            .success-message,
+            .error-message {
+                border-left: 5px solid;
+                color: #000;
+                font-size: 15px;
+                padding: 7px 20px;
+                margin: 10px 0 5px;
+            }
+            .success-message {
+                border-left-color: #11b400;
+                background-color: #eff5ea;
+            }
+
+            .error-message {
+                border-left-color: #df280a;
+                background-color: #faebe7;
+            }
+        }
+
+        .page-title {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .info-button {
+            cursor: pointer;
+            font-size: 0;
+            background-color: transparent;
+            background-image: url('../media/icon-info.svg');
+            background-size: cover;
+            border: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            top: -7px;
+            height: 30px;
+            width: 30px;
+        }
+
+        .field {
+            margin-bottom: 20px;
+
+            label {
+                display: block;
+                font-size: 17px;
+                margin-bottom: 10px;
+            }
+
+            input,
+            textarea {
+                border: 1px solid #a8a8a8;
+                border-radius: 5px;
+                box-sizing: border-box;
+                font-size: 17px;
+                padding: 0 15px;
+                width: 100%;
+            }
+
+            input {
+                height: 45px;
+            }
+
+            textarea {
+                min-height: 45px;
+                padding: 10px 15px;
+                max-width: 100%;
+                min-width: 100%;
+            }
+
+            .error-container {
+                color: red;
+                font-size: 15px;
+                height: 0;
+                margin-top: 5px;
+                overflow: hidden;
+                transition-property: all;
+                transition-duration: 1s;
+            }
+
+            &.error {
+                input,
+                textarea {
+                    border-color: red;
+                }
+
+                label {
+                    color: red;
+                }
+
+                .error-container {
+                    height: 18px;
+                }
+            }
+        }
+
+        .action-wrapper {
+            #submit {
+                color: #fff;
+                cursor: pointer;
+                background: #000;
+                border: none;
+                font-size: 17px;
+                height: 60px;
+                width: 400px;
+                max-width: 100%;
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: #b3282d;
+                }
+            }
+        }
+    }
+}
