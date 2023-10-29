@@ -26,7 +26,7 @@ app.post('/api/registration', upload.array(), (req, res) => {
             let fieldKey = keys[Math.floor(Math.random() * (keys.length - 1))];
             errorResponse.fields[
                 fieldKey
-            ] = `Какая-то ошибка в поле ${fieldKey}`;
+            ] = `Some error in the field ${fieldKey}`;
         }
 
         res.statusCode = 400;
@@ -38,7 +38,7 @@ app.post('/api/registration', upload.array(), (req, res) => {
             res.statusCode = 200;
             res.send({
                 status: 'success',
-                msg: 'Ваша заявка успешно отправлена',
+                msg: 'Your feedback has been successfully submitted',
             });
         }, Math.random() * 1000);
     }
